@@ -1,4 +1,3 @@
-cat << 'EOF' > README.md
 # Python Firewall Simulator 🔥
 
 A powerful, customizable firewall simulation tool built in Python using Scapy. This project is designed to capture network packets, filter them based on user-defined rules, and log blocked packets for easy analysis. It’s a practical tool for learning network security concepts and experimenting with packet inspection.
