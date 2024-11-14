@@ -14,86 +14,105 @@ A powerful, customizable firewall simulation tool built in Python using Scapy. T
 ---
 
 ## 🛠️ Project Structure
+
 PythonFirewallSimulator/ ├── src/ │ └── firewall.py # Main script for packet capture and filtering ├── README.md # Project overview and instructions ├── requirements.txt # Project dependencies └── blocked_packets.log # Log file for blocked packets
 
 yaml
 Copy code
 
----
+----
 
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - **Python 3.x**
 - **Scapy**: For packet capture and inspection.
 - **Npcap** (for Windows users): Required for packet capture. Install in WinPcap compatibility mode.
 
 ### Installation
+
 1. **Clone the Repository**:
+
    ```bash
    git clone https://github.com/goro1408/firewall_project.git
    cd firewall_project
-Install Dependencies:
-
-bash
-Copy code
-pip install -r requirements.txt
-Install Npcap (Windows users only):
+2. **Install Dependencies**:
+    ```bash
+    pip install -r requirements.txt
+3. **Install Npcap (Windows users only)**:
 
 Download Npcap and install it with WinPcap API-compatible mode checked.
+
+---
+
 ### ⚙️ Configuration
+
 You can customize the firewall rules directly in src/firewall.py:
 
-Blocked IPs: Add IPs to BLOCKED_IPS to block traffic from specific IP addresses.
-Blocked Ports: Modify BLOCKED_PORTS to restrict specific ports.
-Blocked Protocols: Add protocols (e.g., TCP, UDP) to BLOCKED_PROTOCOLS to control protocol-based filtering.
-Example configuration:
+- Blocked IPs: Add IPs to BLOCKED_IPS to block traffic from specific IP addresses.
+- Blocked Ports: Modify BLOCKED_PORTS to restrict specific ports.
+- Blocked Protocols: Add protocols (e.g., TCP, UDP) to BLOCKED_PROTOCOLS to control protocol-based filtering.
+- **Example configuration**:
+     ```bash 
+     BLOCKED_IPS = ["192.168.1.10"]
+     BLOCKED_PORTS = [80, 443]
+     BLOCKED_PROTOCOLS = ["UDP"]
+---
 
-python
-Copy code
-BLOCKED_IPS = ["192.168.1.10"]
-BLOCKED_PORTS = [80, 443]
-BLOCKED_PROTOCOLS = ["UDP"]
 ### 📝 Usage
-To start the firewall simulation, run:
 
-bash
-Copy code
-python src/firewall.py
-Output: Allowed and blocked packets will print to the console in real-time.
-Log File: All blocked packets are saved in blocked_packets.log with details including the timestamp, source IP, destination IP, and reason for blocking.
-Example Output:
+- To start the firewall simulation, run:
+     ```bash
+     python src/firewall.py
+- **Output**: Allowed and blocked packets will print to the console in real-time.
+- **Log File**: All blocked packets are saved in blocked_packets.log with details including the timestamp, source IP, destination IP, and reason for blocking.
 
-rust
-Copy code
-Blocked packet from/to IP: 192.168.1.10 -> 10.0.0.2
-Blocked UDP packet: 10.0.0.3:12345 -> 192.168.1.1:80
-Allowed packet: 10.0.0.4 -> 10.0.0.5
-#### 📄 Logs
-Blocked packets are recorded in blocked_packets.log in this format:
+- Example Output:
+     ```bash 
+     Blocked packet from/to IP: 192.168.1.10 -> 10.0.0.2
+     Blocked UDP packet: 10.0.0.3:12345 -> 192.168.1.1:80
+     Allowed packet: 10.0.0.4 -> 10.0.0.5
+---
 
-rust
-Copy code
-2024-11-14 12:34:56 - Blocked packet from/to IP: 192.168.1.10 -> 10.0.0.2
-2024-11-14 12:35:02 - Blocked UDP packet: 10.0.0.3:12345 -> 192.168.1.1:80
+### 📄 Logs
+
+- Blocked packets are recorded in blocked_packets.log in this format:
+    ```bash 
+     2024-11-14 12:34:56 - Blocked packet from/to IP: 192.168.1.10 -> 10.0.0.2
+     2024-11-14 12:35:02 - Blocked UDP packet: 10.0.0.3:12345 -> 192.168.1.1:80
 The log includes timestamps, which help in analyzing when and how often certain packets were blocked.
 
-#### 🛡️ Security Considerations
-This project is intended for learning and experimentation. It should not be used as a replacement for a production-grade firewall. Scapy operates at the application layer and is limited compared to dedicated firewall solutions.
+---
 
-#### 🤔 Why This Project?
-This project demonstrates essential skills in network security, packet analysis, and rule-based filtering. It’s ideal for individuals interested in understanding the basics of firewall operations and exploring packet inspection with Python.
+### 🛡️ Security Considerations
+
+- This project is intended for learning and experimentation. It should not be used as a replacement for a production-grade firewall. Scapy operates at the application layer and is limited compared to dedicated firewall solutions.
+
+---
+
+### 🤔 Why This Project?
+
+- This project demonstrates essential skills in network security, packet analysis, and rule-based filtering. It’s ideal for individuals interested in understanding the basics of firewall operations and exploring packet inspection with Python.
+
+---
 
 ### 🤝 Contributions
-Contributions are welcome! Feel free to fork the repository, submit pull requests, or open issues to suggest improvements.
 
-📄 License
-This project is licensed under the MIT License. See LICENSE for details.
+- Contributions are welcome! Feel free to fork the repository, submit pull requests, or open issues to suggest improvements.
+
+---
+
+### 📄 License
+
+This project is licensed under the [MIT License](LICENSE.md). See the LICENSE file for details.
+
+
+---
 
 ### 📞 Contact
 Developed by Orlando Del Valle Sanchez.
 
-Email: goro.14082@gmail.com
-LinkedIn: Orlando Del Valle Sanchez
-Thank you for checking out the project! 🌐🔒
+- Email: goro.14082@gmail.com
+- LinkedIn:[ Orlando Del Valle Sanchez](https://www.linkedin.com/in/orlando-del-valle-sanchez-499434314/)
 
